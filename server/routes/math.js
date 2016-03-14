@@ -1,28 +1,29 @@
 var express = require("express");
 var router = express.Router();
 
-router.post("/add", function(req,res){
-    var result = parseInt(req.body.inputOne) + parseInt(req.body.inputTwo);
-    result = result.toString();
-    res.send(result);
+//          "/add/5/5"
+router.get("/add/:gremlins/:kitties", function(req,res){
+    var math = parseInt(req.params.gremlins) + parseInt(req.params.kitties);
+    math = math.toString();
+    res.send(math);
 });
 
-router.post("/sub", function(req,res){
-    var result = parseInt(req.body.inputOne) - parseInt(req.body.inputTwo);
-    result = result.toString();
-    res.send(result);
+router.get("/sub/:gremlins/:kitties", function(req,res){
+    var math = parseInt(req.params.gremlins) - parseInt(req.params.kitties);
+    math = math.toString();
+    res.send(math);
 });
 
-router.post("/multi", function(req,res){
-    var result = parseInt(req.body.inputOne) * parseInt(req.body.inputTwo);
-    result = result.toString();
-    res.send(result);
+router.get("/multi/:gremlins/:kitties", function(req,res){
+    var math = parseInt(req.params.gremlins) * parseInt(req.params.kitties);
+    math = math.toString();
+    res.send(math);
 });
 
-router.post("/div", function(req,res){
-    var result = parseInt(req.body.inputOne) / parseInt(req.body.inputTwo);
-    result = result.toString();
-    res.send(result);
+router.get("/div/:gremlins/:kitties", function(req,res){
+    var math = parseInt(req.params.gremlins) / parseInt(req.params.kitties);
+    math = math.toString();
+    res.send(math);
 });
 
 module.exports = router;

@@ -28,9 +28,8 @@ function assignOp(){
 
 function doMath(object){
     $.ajax({
-        type: "POST",
-        url: "/math/" + object.math,
-        data: object,
+        type: "GET",
+        url: "/math/" + object.math + "/" + object.inputOne + "/" + object.inputTwo,
         success: function(response){
           appendDom(response);
         }
